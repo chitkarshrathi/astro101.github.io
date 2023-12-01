@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+    body, html {
+      margin: 0;
+      width: 100%;
+      overflow-x: hidden;  
+      background-color: black;
+      color: white; /* Set text color to white */
+      font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+    }
+
+    /* Other styles... */
+
+    /* Styles for stars in the background */
+    .stars {
+      position: fixed; /* Positioning relative to the viewport */
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Ensures clicks pass through to elements below */
+      z-index: -1; /* Keeps stars behind the content */
+    }
+
+    .star {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .circle {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+    }
+
+    #circle1 {
+      top: 60px;
+      background-color: blue;
+      width: 5px;
+      height: 5px;
+    }
+
+    #circle2 {
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: orange;
+      width: 300px;
+      height: 300px;
+      transition: width 0.1s, height 0.1s; /* Adjusted transition duration for smoother experience */
+      top: calc(50% + 75px); /* Adjusted position for circle2 */
+    }
+
+    #circle3, #circle4 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background-color: black; /* Black center */
+      transition: width 0.1s, height 0.1s; /* Adjusted transition duration for smoother experience */
+    }
+
+    #circle3 {
+      top: calc(120vh - 50px); /* Updated position based on the new height */
+      width: 300px;
+      height: 300px;
+      border: 7px solid orange; /* Orange border */
+    }
+
+    #circle4 {
+      top: calc(180vh - 50px); /* Adjusted position for circle4 */
+      width: 700px;
+      height: 700px;
+      border: 10px solid yellow; /* Yellow border for circle4 */
+    }
+
+    #semicircle {
+      position: absolute;
+      top: calc(200vh + 275px); /* Adjusted position below circle4 */
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50% 50% 0 0; /* Large border-radius for a rounded appearance at the top */
+      background-color: black; /* Black center of the semicircle */
+      border: 10px solid yellow; /* Yellow border for the semicircle */
+      border-bottom: 10px solid black; /* Black bottom border for the semicircle */
+      width: 1900px; /* Increased width of the semicircle */
+      height: 800px;
+    }
+
+    #whiteLine {
+      position: absolute;
+      top: 50px;
+      left: calc(50% + 310px); /* Adjusted position to be to the right of the circles */
+      width: 1px;
+      height: calc(200vh - 50px);
+      background-color: white;
+    }
+
+    /* Text areas */
+      /* Text areas */
+      .textArea {
+      position: absolute;
+      color: white;
+      font-size: 20px;
+      white-space: nowrap;
+    }
+
+    #textArea1 {
+      top: 40px;
+      left: calc(50% + 325px); /* Adjusted position to the right of white line and Circle 1 */
+    }
+
+    #textArea2 {
+      bottom: calc(50% - 210px);
+      left: calc(50% + 325px); /* Adjusted position to the right of white line and Circle 2 */
+    }
+
+    #textArea3 {
+      top: calc(120vh - 50px); /* Updated position based on the new height */
+      left: calc(50% + 325px); /* Adjusted position to the right of white line and Circle 3 */
+    }
+
+    #textArea4 {
+      top: calc(180vh - 50px); /* Adjusted position to the right of white line and Circle 4 */
+      left: calc(50% + 325px); /* Adjusted position to the right of white line and Circle 4 */
+    }
+
+    p {
+      font-size: 16px; /* Set the default font size for paragraphs */
+    }
+
+    /* Different font size for specific paragraphs */
+    .smallParagraph {
+      font-size: 12px;
+    }
+
+    /* Footer */
+    #footer {
+      position: fixed;
+      bottom: 0;
+      left: 20px;
+      font-size: 18px;
+    }
+
+    /* Heading */
+    #heading {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    .main-heading {
+        font-size: 24px; /* Font size for the main heading line */
+    }
+
+    .sub-heading {
+        font-size: 20px; /* Font size for the sub-heading line */
+    }
+
+    #heading span {
+        display: block
+    }
+
+    #semicircleText {
+    position: absolute;
+    top: calc(200vh + 300px); /* Adjust the top position based on your design */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+    #semicircleText p {
+    margin: 10px 0; /* Adjust the margin as needed */
+  }
+
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  
+  <!-- Your existing content goes here... -->
+
+  <div id="circle1" class="circle"></div>
+  <div id="circle2" class="circle"></div>
+  <div id="circle3" class="circle"></div>
+  <div id="circle4" class="circle"></div>
+  <div id="semicircle"></div>
+  <div id="whiteLine"></div>
+
+  <!-- Text areas -->
+  <div id="textArea1" class="textArea">
+    <p> <b> The Earth </b> </p>
+    <p class="smallParagraph"> Mass - 5.97219 x 10 <sup> 24 </sup>kilograms </p>
+    <p class="smallParagraph"> Our Earth is just a small speck in the vastness of the universe. </p>
+    <p class="smallParagraph"> Here it's just 5 pixels in height and width. Just barely enough to be seen </p>
+    <p class="smallParagraph"> on the screen.  </p>
+  </div>
+  <div id="textArea2" class="textArea">
+    <p> <b> The Sun </b></p>
+    <p class="smallParagraph"> Mass - 3.955 x 10 <sup> 30 </sup>kilograms or 1 Solar Mass </p>
+    <p class="smallParagraph"> This is our Sun, the center of our solar system. It's massive compared to </p>
+    <p class="smallParagraph"> the Earth, about 333000 thousand times our mass. But even it falls short </p>
+    <p class="smallParagraph"> compared to the rest of the universe. </p>
+  </div>
+  <div id="textArea3" class="textArea">
+    <p> <b> A Stellar-Mass Black Hole</b></p>
+    <p class="smallParagraph"> Mass - About 3 to 100 Solar Masses </p>
+    <p class="smallParagraph"> This is a black hole, a region of space where gravity is so strong that </p>
+    <p class="smallParagraph"> nothing can escape, not even light. Even though a Stellar-Mass Black </p>
+    <p class="smallParagraph"> Holes Mass can range from 3 to 100 Solar Masses, our example is about </p>
+    <p class="smallParagraph"> 10 times the size of the Sun, so 10 Solar Masses. </p>
+  </div>
+  <div id="textArea4" class="textArea">Text Area 4</div>
+
+  <div id="semicircleText" class="textArea">
+    <p>This is some text under the semicircle.</p>
+    <p>You can add more paragraphs or customize the text as needed.</p>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer"> a chitkarsh rathi project </div>
+
+  <!-- Heading -->
+  <div id="heading"> 
+    <span class = "main-heading"> ASTRO 101 Fall 2023 </span>
+    <span class = "main-heading"> Creative Project </span>
+    <br>
+    <span class = "sub-heading"> Visualizing the Sizes of </span>
+    <span class = "sub-heading"> Interstellar Objects </span>
+  </div>
+
+  <script>
+    // Your existing JavaScript for scroll effect...
+
+    // JavaScript for creating stars
+    document.addEventListener('DOMContentLoaded', function() {
+      const starCount = 600; // The number of stars you want
+      const starField = document.querySelector('.stars');
+
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        const xPos = Math.random() * window.innerWidth + 'px';
+        const yPos = Math.random() * window.innerHeight + 'px';
+
+        star.style.left = xPos;
+        star.style.top = yPos;
+        starField.appendChild(star);
+      }
+    });
+  </script>
+  <script>
+    window.addEventListener('scroll', function () {
+      // Calculate the scroll position
+      let scrollPosition = window.scrollY;
+
+      // Calculate the new size based on scroll position for circle2
+      let newSizeCircle2 = 300 - scrollPosition / 1; // Adjusted scroll speed for circle2
+      newSizeCircle2 = Math.max(20, newSizeCircle2); // Ensure size doesn't go below 20px
+
+      // Apply the new size to circle2
+      document.getElementById('circle2').style.width = newSizeCircle2 + 'px';
+      document.getElementById('circle2').style.height = newSizeCircle2 + 'px';
+
+      // Start sizing down circle3 after reaching a certain scroll position (e.g., 720 pixels)
+      if (scrollPosition > 600) {
+        // Calculate the new size based on scroll position for circle3
+        let newSizeCircle3 = 300 - (scrollPosition - 600) / 1; // Adjusted scroll speed for circle3 after 720 pixels
+        newSizeCircle3 = Math.max(20, newSizeCircle3); // Ensure size doesn't go below 20px
+
+        // Calculate the new border width based on the circle size
+        let newBorderWidthCircle3 = Math.max(1, 7 - (scrollPosition - 600) / 20); // Adjusted scroll speed for border width
+        document.getElementById('circle3').style.width = newSizeCircle3 + 'px';
+        document.getElementById('circle3').style.height = newSizeCircle3 + 'px';
+        document.getElementById('circle3').style.borderWidth = newBorderWidthCircle3 + 'px';
+      }
+
+      // Start sizing down circle4 after reaching a certain scroll position (e.g., 1000 pixels)
+      if (scrollPosition > 700) {
+        // Calculate the new size based on scroll position for circle4
+        let newSizeCircle4 = 700 - (scrollPosition - 700) / 1 // Adjusted scroll speed for circle4 after 1000 pixels
+        newSizeCircle4 = Math.max(20, newSizeCircle4); // Ensure size doesn't go below 20px
+
+        // Calculate the new border width based on the circle size
+        let newBorderWidthCircle4 = Math.max(1, 10 - (scrollPosition - 700) / 20); // Adjusted scroll speed for border width
+        document.getElementById('circle4').style.width = newSizeCircle4 + 'px';
+        document.getElementById('circle4').style.height = newSizeCircle4 + 'px';
+        document.getElementById('circle4').style.borderWidth = newBorderWidthCircle4 + 'px';
+      }
+    });
+  </script>
+
+</body>
+</html>
