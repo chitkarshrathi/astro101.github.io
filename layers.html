@@ -74,6 +74,16 @@
       width: 900px;
 
     }
+
+    #creditText {
+      position: absolute;
+      top: calc(50% + 350px) ;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      text-align: center;
+      font-size: 14px;
+      z-index: 1000; /* Ensure the credit text is on top of the image */
+    }
   </style>
 </head>
 <body>
@@ -92,6 +102,8 @@
 
   <!-- Centered Image -->
   <img id="centeredImage" src="blackholelayers.jpeg" alt="Black Hole Layers">
+
+  <div id="creditText">Image Credit: <a href = "https://qph.cf2.quoracdn.net/main-qimg-fada0f1e1144e6e85286dafc7844ea71-lq" > Quora: What are the parts of a black hole? </a></div>
 
   <!-- Footer -->
   <div id="footer"> a chitkarsh rathi project </div>
