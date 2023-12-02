@@ -11,17 +11,16 @@
       width: 100%;
       overflow-x: hidden;  
       background-color: black;
-      color: white; /* Set text color to white */
-      font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+      color: white; 
+      font-family: 'Montserrat', sans-serif; 
     }
 
-    /* Styles for stars in the background */
     .stars {
-      position: fixed; /* Positioning relative to the viewport */
+      position: fixed; 
       width: 100%;
       height: 100%;
-      pointer-events: none; /* Ensures clicks pass through to elements below */
-      z-index: -1; /* Keeps stars behind the content */
+      pointer-events: none; 
+      z-index: -1; 
     }
 
     .star {
@@ -32,7 +31,6 @@
       border-radius: 50%;
     }
 
-    /* Heading */
     #heading {
       position: absolute;
       top: 20px;
@@ -40,18 +38,17 @@
     }
 
     .main-heading {
-      font-size: 24px; /* Font size for the main heading line */
+      font-size: 24px; 
     }
 
     .sub-heading {
-      font-size: 20px; /* Font size for the sub-heading line */
+      font-size: 20px; 
     }
 
     #heading span {
       display: block;
     }
 
-    /* Footer */
     #footer {
       position: fixed;
       bottom: 0;
@@ -63,13 +60,12 @@
       color: #FFFFFF;
     }
 
-    /* Centered image */
     #centeredImage {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 999; /* Ensure the image is behind the stars */
+      z-index: 999; 
       height: 700px;
       width: 900px;
 
@@ -82,14 +78,13 @@
       transform: translate(-50%, 50%);
       text-align: center;
       font-size: 14px;
-      z-index: 1000; /* Ensure the credit text is on top of the image */
+      z-index: 1000; 
     }
   </style>
 </head>
 <body>
   <div class="stars"></div>
 
-  <!-- Heading -->
   <div id="heading"> 
     <span class="main-heading"> ASTRO 101 Fall 2023 </span>
     <span class="main-heading"> Creative Project </span>
@@ -100,21 +95,17 @@
     <span class="sub-heading"> <a href="index.html"> Home </a> </span>
   </div>
 
-  <!-- Centered Image -->
   <img id="centeredImage" src="blackholelayers.jpeg" alt="Black Hole Layers">
 
   <div id="creditText">Image Credit: <a href = "https://qph.cf2.quoracdn.net/main-qimg-fada0f1e1144e6e85286dafc7844ea71-lq" > Quora: What are the parts of a black hole? </a></div>
 
-  <!-- Footer -->
   <div id="footer"> a chitkarsh rathi project </div>
 
   <script>
-    // Your existing JavaScript for stars...
   </script>
   <script>
-    // JavaScript for creating stars...
     document.addEventListener('DOMContentLoaded', function() {
-      const starCount = 600; // The number of stars you want
+      const starCount = 600;
       const starField = document.querySelector('.stars');
 
       for (let i = 0; i < starCount; i++) {
